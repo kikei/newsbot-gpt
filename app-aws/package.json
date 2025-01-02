@@ -8,20 +8,21 @@
     "build": "tsc --noEmit",
     "watch": "tsc -w",
     "cdk": "cdk",
-    "deploy": "cdk deploy"
+    "deploy": "cdk deploy",
+    "diff": "cdk diff"
   },
   "devDependencies": {
-    "@types/node": "20.11.30",
-    "aws-cdk": "2.135.0",
+    "@types/node": "^22.10.3",
+    "aws-cdk": "^2.173.4",
     "ts-node": "^10.9.2",
-    "typescript": "~5.4.3"
+    "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@types/aws-lambda": "^8.10.136",
-    "@types/dotenv": "^8.2.0",
-    "aws-cdk-lib": "2.135.0",
-    "constructs": "^10.0.0",
-    "dotenv": "^16.4.5",
-    "esbuild": "^0.20.2"
+    "@types/aws-lambda": "^8.10.146",
+    "@types/dotenv": "^8.2.3",
+    "aws-cdk-lib": "^2.173.4",
+    "constructs": "^10.4.2",
+    "dotenv": "^16.4.7",
+    "esbuild": "^0.24.2"
   }
 }

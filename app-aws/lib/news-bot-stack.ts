@@ -26,7 +26,7 @@ export class NewsBotStack extends cdk.Stack {
     const fn = new nodejs.NodejsFunction(this, 'Function', {
       entry: 'src/handler.ts',
       handler: 'handler',
-      runtime: lambda.Runtime.NODEJS_20_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       timeout: cdk.Duration.seconds(30),
       environment: {
         NEWS_API_KEY: props.newsApiKey,

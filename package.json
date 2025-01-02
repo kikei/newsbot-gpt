@@ -1,6 +1,6 @@
 {
   "name": "newsbot-chatgpt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "workspaces": [
     "lib-news",
@@ -9,9 +9,7 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces",
-    "deploy:aws": "npm run deploy --workspace app-aws"
-  },
-  "dependencies": {
-    "@types/node": "^20.12.4"
+    "aws:deploy": "npm run deploy --workspace app-aws",
+    "aws:diff": "npm run diff --workspace app-aws"
   }
 }
