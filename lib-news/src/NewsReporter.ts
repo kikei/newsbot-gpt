@@ -1,5 +1,6 @@
 import { Readability } from '@mozilla/readability';
 import { JSDOM } from 'jsdom';
+import TurndownService from 'turndown';
 
 import { Article, getNews } from './news';
 import { Summary, gptSummarize, parseGptSummary } from './summary';
@@ -117,12 +118,14 @@ export class NewsReporter {
 
 export async function fetchReadableArticle(url: string): Promise<string> {
   const article = await fetchArticle(url);
-  const dom = new JSDOM(article);
+  const dom = new JSDOM(article, {url});
   const reader = new Readability(dom.window.document);
   const doc = reader.parse();
   if (!doc)
     throw new NewsError(`Failed to parse readable article: ${url}`);
-  return doc.content;
+  const turndown = new TurndownService();
+  const md = turndown.turndown(doc.content);
+  return md;
 }
 
 async function fetchArticle(url: string): Promise<string> {
