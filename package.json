@@ -7,8 +7,8 @@
     "app-aws"
   ],
   "scripts": {
-    "build": "npm run build --workspaces",
-    "test": "npm run test --workspaces",
+    "build": "npm run build --workspace lib-news",
+    "test": "npm run test --workspace lib-news",
     "aws:deploy": "npm run deploy --workspace app-aws",
     "aws:diff": "npm run diff --workspace app-aws"
   }
